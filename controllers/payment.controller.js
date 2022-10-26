@@ -6,7 +6,7 @@ const initSSLCommerz = async (req, res) => {
   const { price } = req.query;
 
   console.log(price);
-  
+
   const data = {
     total_amount: price,
     currency: "BDT",
@@ -46,10 +46,9 @@ const initSSLCommerz = async (req, res) => {
     // Redirect the user to payment gateway
     let GatewayPageURL = apiResponse.GatewayPageURL;
     console.log("Redirecting to: ", GatewayPageURL);
-    res.redirect(GatewayPageURL);
-    /* res.json({
+    res.json({
       url: GatewayPageURL,
-    }); */
+    });
   });
 };
 
