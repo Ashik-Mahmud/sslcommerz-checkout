@@ -7,11 +7,17 @@ const bodyParser = require("body-parser");
 //middle wares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-const port  = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 //routes
 app.get("/", (req, res) => {
   res.send({
