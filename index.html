@@ -13,7 +13,7 @@
   <script>
     const payWithSsl = async () => {
       const response = await fetch(
-        `http://localhost:5000/api/payment/init?price=500`,
+        `https://sslcommerz-checkout-production.up.railway.app/api/payment/init?price=500`,
         {
           method: "GET",
           headers: {
@@ -24,10 +24,6 @@
       const data = await response.json();
 
       console.log(data);
-
-      if (data) {
-        window.location.href = data?.url;
-      }
     };
 
     console.log(

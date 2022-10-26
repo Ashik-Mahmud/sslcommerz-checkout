@@ -46,9 +46,10 @@ const initSSLCommerz = async (req, res) => {
     // Redirect the user to payment gateway
     let GatewayPageURL = apiResponse.GatewayPageURL;
     console.log("Redirecting to: ", GatewayPageURL);
-    res.json({
+    res.redirect(GatewayPageURL);
+    /* res.json({
       url: GatewayPageURL,
-    });
+    }); */
   });
 };
 
